@@ -1,5 +1,7 @@
 # 🛠️ HelpDesk (MERN + Socket.IO + Nodemailer + Multer)
-
+<p align="center">
+  <a href="https://help-desk-customer-support-ticket-p.vercel.app/">🌐 Live Demo</a> 
+</p>
 
 A full-stack **Customer Support Ticketing System** built using the **MERN Stack** with **real-time chat**, **file uploads**, **role-based dashboards**, and **basic analytics** — simulating a real-world helpdesk experience.
 
