@@ -29,7 +29,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:5050/api/auth/register", formData);
+      const res = await axios.post("https://helpdesk-customer-support-ticket-project.onrender.com/api/auth/register", formData);
       alert("Registration successful");
       navigate("/login"); // Redirect to login
     } catch (err) {

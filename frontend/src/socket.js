@@ -2,7 +2,7 @@ import { io } from "socket.io-client";
 
 console.log("📡 Socket connecting...");
 
-const socket = io("http://localhost:5050", {
+const socket = io("https://helpdesk-customer-support-ticket-project.onrender.com", {
   reconnectionAttempts: 5,
   timeout: 2000,
   // ⚠️ Do not force transports here — allow fallback to polling

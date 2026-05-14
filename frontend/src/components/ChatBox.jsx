@@ -13,7 +13,7 @@ function ChatBox({ ticketId }) {
 
     const fetchMessages = async () => {
       try {
-        const res = await axios.get(`http://localhost:5050/api/messages/${ticketId}`, {
+        const res = await axios.get(`https://helpdesk-customer-support-ticket-project.onrender.com/api/messages/${ticketId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessages(res.data);
@@ -43,7 +43,7 @@ function ChatBox({ ticketId }) {
 
     try {
       await axios.post(
-        "http://localhost:5050/api/messages",
+        "https://helpdesk-customer-support-ticket-project.onrender.com/api/messages",
         { ticketId, message: newMessage },
         {
           headers: { Authorization: `Bearer ${token}` },

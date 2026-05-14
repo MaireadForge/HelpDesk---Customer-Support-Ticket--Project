@@ -13,7 +13,7 @@ function DashboardAgent() {
 
   const fetchAssignedTickets = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/tickets/assigned", {
+      const res = await axios.get("https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets/assigned", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTickets(res.data);
@@ -27,7 +27,7 @@ function DashboardAgent() {
   const handleUpdate = async (ticketId, field, value) => {
     try {
       await axios.put(
-        `http://localhost:5050/api/tickets/${ticketId}`,
+        `https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets/${ticketId}`,
         { [field]: value },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -77,7 +77,7 @@ function DashboardAgent() {
 
               {ticket.attachment && (
                 <a
-                  href={`http://localhost:5050/uploads/${ticket.attachment}`}
+                  href={`https://helpdesk-customer-support-ticket-project.onrender.com/uploads/${ticket.attachment}`}
                   target="_blank"
                   rel="noreferrer"
                   className="attachment-link"

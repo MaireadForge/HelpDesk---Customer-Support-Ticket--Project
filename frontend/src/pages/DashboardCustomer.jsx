@@ -37,7 +37,7 @@ function DashboardCustomer() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5050/api/tickets", form, {
+      const res = await axios.post("https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets", form, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data",
@@ -53,7 +53,7 @@ function DashboardCustomer() {
 
   const fetchTickets = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/tickets", {
+      const res = await axios.get("https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTickets(res.data);
@@ -65,7 +65,7 @@ function DashboardCustomer() {
   const handleRateTicket = async (ticketId, rating) => {
     try {
       await axios.put(
-        `http://localhost:5050/api/tickets/rate/${ticketId}`,
+        `https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets/rate/${ticketId}`,
         { rating: Number(rating) },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -113,7 +113,7 @@ function DashboardCustomer() {
                 <p><strong>Priority:</strong> {ticket.priority}</p>
                 <span className={`status-badge ${ticket.status}`}>{ticket.status}</span>
                 {ticket.attachment && (
-                  <a href={`http://localhost:5050/uploads/${ticket.attachment}`} target="_blank" rel="noreferrer">📎 View Attachment</a>
+                  <a href={`https://helpdesk-customer-support-ticket-project.onrender.com/uploads/${ticket.attachment}`} target="_blank" rel="noreferrer">📎 View Attachment</a>
                 )}
                 <ChatBox ticketId={ticket._id} />
                 {ticket.status === "resolved" && (

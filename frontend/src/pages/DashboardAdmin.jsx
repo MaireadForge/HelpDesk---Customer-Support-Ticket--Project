@@ -18,7 +18,7 @@ function DashboardAdmin() {
 
   const fetchTickets = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/tickets/admin/all", {
+      const res = await axios.get("https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets/admin/all", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTickets(res.data);
@@ -29,7 +29,7 @@ function DashboardAdmin() {
 
   const fetchAgents = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/api/users/agents", {
+      const res = await axios.get("https://helpdesk-customer-support-ticket-project.onrender.com/api/users/agents", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAgents(res.data);
@@ -44,7 +44,7 @@ function DashboardAdmin() {
 
     try {
       await axios.post(
-        "http://localhost:5050/api/tickets/assign",
+        "https://helpdesk-customer-support-ticket-project.onrender.com/api/tickets/assign",
         { ticketId, agentId },
         { headers: { Authorization: `Bearer ${token}` } }
       );
